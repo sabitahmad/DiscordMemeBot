@@ -12,7 +12,7 @@
    <img src="https://img.shields.io/badge/discord.js-v14-blue?style=for-the-badge" alt="discord.js">
 </a>
 
-<a href="https://github.com/">
+<a href="https://github.com/sabitahmad/DiscordMemeBot">
    <img src="https://img.shields.io/badge/version-latest-red?style=for-the-badge" alt="discord meme bot">
 </a>
 
@@ -21,7 +21,7 @@
 
 <p align="center">
    
-<a href="">
+<a href="https://github.com/sabitahmad/DiscordMemeBot/fork">
    <img src="https://img.shields.io/badge/Fork-github-blueviolet?logo=githubactions&logoColor=white&style=for-the-badge" alt="github-fork">
 </a>
    
@@ -39,7 +39,7 @@
 - Cooldowns
 
 ## Preview
-<img src=""/>
+<img src="" alt="preview"/>
 
 ## Installation & Setup
 ```
