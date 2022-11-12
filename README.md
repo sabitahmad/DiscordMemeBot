@@ -38,6 +38,12 @@
 - Auto meme posting (upcoming)
 - Cooldowns
 
+# To Do
+- [ ] Implement All memer api
+- [ ] Implement all dank memes
+- [ ] Custom canvas memes
+- [ ] Auto meme posting (cron Based)
+
 ## Preview
 <img src="" alt="preview"/>
 
