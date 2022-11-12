@@ -27,6 +27,7 @@ module.exports = {
                 .setTitle(`Meme for ${user.tag}`)
                 .setColor('NotQuiteBlack')
                 .setImage('attachment://cancer.png')
+                .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
             await interaction.editReply({embeds: [embed], files: [attachment]})
 

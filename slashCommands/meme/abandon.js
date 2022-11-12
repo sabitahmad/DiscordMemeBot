@@ -8,7 +8,7 @@ module.exports = {
     options: [
         {
             name: 'text',
-            description: 'Input note text',
+            description: 'Input abandon text',
             type: ApplicationCommandOptionType.String,
             required: true
         },
@@ -24,9 +24,10 @@ module.exports = {
             const attachment = new AttachmentBuilder(image, {name: 'abandon.png'})
 
             const embed = new EmbedBuilder()
-                .setTitle(`Note for ${interaction.user.tag}`)
+                .setTitle(`Meme for ${interaction.user.tag}`)
                 .setColor('Greyple')
                 .setImage('attachment://abandon.png')
+                .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
 
             await interaction.editReply({embeds: [embed], files: [attachment]})

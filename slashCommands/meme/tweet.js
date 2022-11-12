@@ -36,6 +36,7 @@ module.exports = {
                 .setTitle(`Meme for ${user.tag}`)
                 .setColor('Blue')
                 .setImage('attachment://tweet.png')
+                .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
 
             await interaction.editReply({embeds: [embed], files: [attachment]})
