@@ -4,7 +4,7 @@ module.exports = {
     name: 'abandon',
     description: "Generate abandon meme",
     type: ApplicationCommandType.ChatInput,
-    cooldown: 3000,
+    cooldown: 5000,
     options: [
         {
             name: 'text',

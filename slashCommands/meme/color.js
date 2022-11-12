@@ -1,11 +1,11 @@
 const { ApplicationCommandType, ActionRowBuilder, ButtonBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
-	name: 'color',
-	description: "Choose a color!",
-	type: ApplicationCommandType.ChatInput,
-	cooldown: 3000,
-	run: async (client, interaction) => {
+    name: 'color',
+    description: "Choose a color!",
+    type: ApplicationCommandType.ChatInput,
+    cooldown: 5000,
+    run: async (client, interaction) => {
         /** Get the buttons
          * @param {Boolean} toggle - Toggle disable buttons
          * @param {string} [choice = null] choice - The color user chose
@@ -13,8 +13,8 @@ module.exports = {
         const getButtons = (toggle = false, choice) => {
             const row = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                        .setLabel('Green')
-                        .setCustomId('green')
+                    .setLabel('Green')
+                    .setCustomId('green')
                         .setStyle(toggle == true && choice == 'green' ? 'Secondary' : 'Success')
                         .setDisabled(toggle),
     

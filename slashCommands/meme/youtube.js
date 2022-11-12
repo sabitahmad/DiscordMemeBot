@@ -4,7 +4,7 @@ module.exports = {
     name: 'youtube',
     description: "Send youtube meme",
     type: ApplicationCommandType.ChatInput,
-    cooldown: 3000,
+    cooldown: 5000,
     options: [
         {
             name: 'text',

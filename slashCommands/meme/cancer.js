@@ -4,7 +4,7 @@ module.exports = {
     name: 'cancer',
     description: "Send cancer meme",
     type: ApplicationCommandType.ChatInput,
-    cooldown: 3000,
+    cooldown: 5000,
     options: [
         {
             name: 'user',
