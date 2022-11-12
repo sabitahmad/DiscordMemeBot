@@ -25,7 +25,7 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 .setTitle(`Note for ${interaction.user.tag}`)
-                .setColor('Blue')
+                .setColor('Greyple')
                 .setImage('attachment://abandon.png')
                 .setTimestamp()
 
