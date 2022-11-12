@@ -36,7 +36,7 @@ console.log(chalk.bgMagenta('             ,----------------,              ,-----
 	'     |  |                 |  |  |     | -==----\'|      |\n' +
 	'     |  |  MEME BOT!      |  |  |     |         |      |\n' +
 	'     |  |  Loading        |  |  |/----|`---=    |      |\n' +
-	'     |  |  C:\\>_         |  |  |   ,/|==== ooo |      ;\n' +
+	'     |  |  C:\\>_          |  |  |   ,/|==== ooo |      ;\n' +
 	'     |  |                 |  |  |  // |(((( [33]|    ,"\n' +
 	'     |  `-----------------\'  |," .;\'| |((((     |  ,"\n' +
 	'     +-----------------------+  ;;  | |         |,"     -XCALIBUR-\n' +
@@ -51,4 +51,4 @@ fs.readdirSync('./handlers').forEach((handler) => {
 });
 
 
-client.login(process.env.TOKEN).then(r => console.log(chalk.bgYellowBright('Bot Is Ready')))
+client.login(process.env.TOKEN).then(() => console.log(chalk.bgYellowBright('Bot Is Ready')))
