@@ -1,5 +1,4 @@
 const { ApplicationCommandType, ApplicationCommandOptionType, AttachmentBuilder, EmbedBuilder} = require('discord.js');
-const chalk = require("chalk");
 
 module.exports = {
     name: 'tweet',
