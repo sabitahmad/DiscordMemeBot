@@ -13,8 +13,6 @@ module.exports = {
             required: true
         },
 
-
-
     ],
     run: async (client, interaction) => {
         await interaction.deferReply()
