@@ -24,7 +24,7 @@ module.exports = {
         const formats = ['png', 'jpg', 'jpeg', 'gif'];
         const components = [];
         formats.forEach(format => {
-            let imageOptions = { extension: format, forceStatic: format == 'gif' ? false : true };
+            let imageOptions = { extension: format, forceStatic: format !== 'gif' };
 
             if (user.avatar == null && format !== 'png') return; 
             if (!user.avatar.startsWith('a_') && format === 'gif') return;
