@@ -1,35 +1,30 @@
 const { ApplicationCommandType, ApplicationCommandOptionType, AttachmentBuilder, EmbedBuilder} = require('discord.js');
 
-module.exports = {name: 'tweet', description: "Generate tweet meme", type: ApplicationCommandType.ChatInput, cooldown: 5000, options: [
+module.exports = {
+    name: 'changemymind',
+    description: "Generate changemymind meme",
+    type: ApplicationCommandType.ChatInput,
+    cooldown: 5000,
+    options: [
         {
             name: 'text',
-            description: 'Input meme text',
+            description: 'Input Change My Mind text',
             type: ApplicationCommandOptionType.String,
             required: true
         },
 
-        {
-            name: 'user',
-            description: 'The user you want about',
-            type: ApplicationCommandOptionType.User
-        },
-
-
-
-    ], run: async (client, interaction) => {
-
-        const user = interaction.options.get('user')?.user || interaction.user;
-        const avatar = user.displayAvatarURL({ extension: "png" })
+    ],
+    run: async (client, interaction) => {
         await interaction.deferReply()
 
-        client.memer.tweet(avatar,user.username, interaction.options.get('text').value).then(async image => {
+        client.memer.changemymind(interaction.options.get('text').value).then(async image => {
 
-            const attachment = new AttachmentBuilder(image, {name: 'tweet.png'})
+            const attachment = new AttachmentBuilder(image, {name: 'changemymind.png'})
 
             const embed = new EmbedBuilder()
-                .setTitle(`Meme for ${user.tag}`)
-                .setColor('Blue')
-                .setImage('attachment://tweet.png')
+                .setTitle(`Meme for ${interaction.user.tag}`)
+                .setColor('Orange')
+                .setImage('attachment://changemymind.png')
                 .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
 
@@ -45,6 +40,8 @@ module.exports = {name: 'tweet', description: "Generate tweet meme", type: Appli
                 .setTimestamp()
 
             await interaction.editReply({embeds: [embed]})
+
         })
 
-    }};
+    }
+};

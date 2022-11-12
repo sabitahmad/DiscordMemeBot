@@ -31,6 +31,16 @@ module.exports = {
                 .setTimestamp()
             await interaction.editReply({embeds: [embed], files: [attachment]})
 
+        }).catch(async err => {
+            const embed = new EmbedBuilder()
+                .setTitle(`Error`)
+                .setColor('Red')
+                .setDescription(`Error occurred ${err}`)
+                .setFooter({text: `Executed by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL()})
+                .setTimestamp()
+
+            await interaction.editReply({embeds: [embed]})
+
         })
 
 

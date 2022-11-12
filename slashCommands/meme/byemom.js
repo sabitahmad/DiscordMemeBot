@@ -1,6 +1,11 @@
-const { ApplicationCommandType, ApplicationCommandOptionType, AttachmentBuilder, EmbedBuilder} = require('discord.js');
+const {ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder, AttachmentBuilder} = require("discord.js");
 
-module.exports = {name: 'tweet', description: "Generate tweet meme", type: ApplicationCommandType.ChatInput, cooldown: 5000, options: [
+module.exports = {
+    name: 'byemom',
+    description: "Send byemom meme",
+    type: ApplicationCommandType.ChatInput,
+    cooldown: 5000,
+    options: [
         {
             name: 'text',
             description: 'Input meme text',
@@ -10,41 +15,42 @@ module.exports = {name: 'tweet', description: "Generate tweet meme", type: Appli
 
         {
             name: 'user',
-            description: 'The user you want about',
+            description: 'The user you want meme about',
             type: ApplicationCommandOptionType.User
         },
 
 
 
-    ], run: async (client, interaction) => {
+    ],
+    run: async (client, interaction) => {
 
         const user = interaction.options.get('user')?.user || interaction.user;
-        const avatar = user.displayAvatarURL({ extension: "png" })
+        const avatar = user.displayAvatarURL({extension: "png"})
         await interaction.deferReply()
 
-        client.memer.tweet(avatar,user.username, interaction.options.get('text').value).then(async image => {
+        await client.memer.byemom(avatar, user.username, interaction.options.get('text').value).then(async image => {
 
-            const attachment = new AttachmentBuilder(image, {name: 'tweet.png'})
+            const attachment = new AttachmentBuilder(image, {name: 'byemom.png'})
 
             const embed = new EmbedBuilder()
                 .setTitle(`Meme for ${user.tag}`)
-                .setColor('Blue')
-                .setImage('attachment://tweet.png')
+                .setColor('DarkRed')
+                .setImage('attachment://byemom.png')
                 .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
-
             await interaction.editReply({embeds: [embed], files: [attachment]})
 
         }).catch(async err => {
-
             const embed = new EmbedBuilder()
                 .setTitle(`Error`)
                 .setColor('Red')
                 .setDescription(`Error occurred ${err}`)
-                .setFooter({text: `Executed by ${interaction.user.tag}` , iconURL: interaction.user.displayAvatarURL()})
+                .setFooter({text: `Executed by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp()
 
             await interaction.editReply({embeds: [embed]})
         })
 
-    }};
+
+    }
+}
